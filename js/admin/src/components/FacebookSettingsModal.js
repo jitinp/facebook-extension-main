@@ -6,16 +6,20 @@ export default class FacebookSettingsModal extends SettingsModal {
     return 'FacebookSettingsModal Modal--small';
   }
 
+  title() {
+    return 'Facebook Details';
+  }
+
   form() {
     return [
       <div className="Form-group">
-        <label>App Id</label>
-        <input className="FormControl" bidi={this.setting('blitzz-main-facebook.app_id')}/>
+        <label>Facebook Id</label>
+        <input className="FormControl" />
       </div>,
 
       <div className="Form-group">
-        <label>App Secret</label>
-        <input className="FormControl" bidi={this.setting('blitzz-main-facebook.app_secret')}/>
+        <label>Facebook Secret</label>
+        <input className="FormControl" />
       </div>
     ];
   }

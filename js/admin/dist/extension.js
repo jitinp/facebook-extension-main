@@ -24,6 +24,11 @@ System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flaru
             return 'FacebookSettingsModal Modal--small';
           }
         }, {
+          key: 'title',
+          value: function title() {
+            return 'Facebook Details';
+          }
+        }, {
           key: 'form',
           value: function form() {
             return [m(
@@ -32,18 +37,18 @@ System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flaru
               m(
                 'label',
                 null,
-                'App Id'
+                'Facebook Id'
               ),
-              m('input', { className: 'FormControl', bidi: this.setting('blitzz-main-facebook.app_id') })
+              m('input', { className: 'FormControl' })
             ), m(
               'div',
               { className: 'Form-group' },
               m(
                 'label',
                 null,
-                'App Secret'
+                'Facebook Secret'
               ),
-              m('input', { className: 'FormControl', bidi: this.setting('blitzz-main-facebook.app_secret') })
+              m('input', { className: 'FormControl' })
             )];
           }
         }]);
@@ -70,11 +75,11 @@ System.register('blitzz/main/facebook/main', ['flarum/app', 'blitzz/main/faceboo
 
 			app.initializers.add('blitzz-main-facebook', function () {
 				console.log("hey!!");
-				var test = new FacebookSettingsModal();
-				console.log(test.form());
+				var fb_modal = new FacebookSettingsModal();
+				console.log(fb_modal.form());
 				console.log(app);
 				app.extensionSettings['blitzz-main-facebook'] = function () {
-					return app.modal.show(test);
+					return app.modal.show(fb_modal);
 				};
 			});
 		}
