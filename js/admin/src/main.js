@@ -5,6 +5,7 @@ import FacebookSettingsModal from 'blitzz/main/facebook/components/FacebookSetti
 app.initializers.add('blitzz-main-facebook', () => {
 	console.log("hey!!");
 	var test = new FacebookSettingsModal();
-	//console.log(test);
+	console.log(test.form());
+	console.log(app);
   app.extensionSettings['blitzz-main-facebook'] = () => app.modal.show(test);
 });

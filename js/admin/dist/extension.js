@@ -1,30 +1,5 @@
 'use strict';
 
-System.register('blitzz/main/facebook/main', ['flarum/app', 'blitzz/main/facebook/components/FacebookSettingsModal'], function (_export, _context) {
-	"use strict";
-
-	var app, FacebookSettingsModal;
-	return {
-		setters: [function (_flarumApp) {
-			app = _flarumApp.default;
-		}, function (_blitzzMainFacebookComponentsFacebookSettingsModal) {
-			FacebookSettingsModal = _blitzzMainFacebookComponentsFacebookSettingsModal.default;
-		}],
-		execute: function () {
-
-			app.initializers.add('blitzz-main-facebook', function () {
-				console.log("hey!!");
-				var test = new FacebookSettingsModal();
-				//console.log(test);
-				app.extensionSettings['blitzz-main-facebook'] = function () {
-					return app.modal.show(test);
-				};
-			});
-		}
-	};
-});;
-'use strict';
-
 System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flarum/components/SettingsModal'], function (_export, _context) {
   "use strict";
 
@@ -49,11 +24,6 @@ System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flaru
             return 'FacebookSettingsModal Modal--small';
           }
         }, {
-          key: 'title',
-          value: function title() {
-            return app.translator.trans('blitzz-main-facebook.admin.facebook_settings.title');
-          }
-        }, {
           key: 'form',
           value: function form() {
             return [m(
@@ -62,16 +32,16 @@ System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flaru
               m(
                 'label',
                 null,
-                app.translator.trans('blitzz-main-facebook.admin.facebook_settings.app_id_label')
+                'App Id'
               ),
-              m('input', { className: 'FormControl', bidi: this.setting('flarum-main-facebook.app_id') })
+              m('input', { className: 'FormControl', bidi: this.setting('blitzz-main-facebook.app_id') })
             ), m(
               'div',
               { className: 'Form-group' },
               m(
                 'label',
                 null,
-                app.translator.trans('blitzz-main-facebook.admin.facebook_settings.app_secret_label')
+                'App Secret'
               ),
               m('input', { className: 'FormControl', bidi: this.setting('blitzz-main-facebook.app_secret') })
             )];
@@ -83,4 +53,30 @@ System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flaru
       _export('default', FacebookSettingsModal);
     }
   };
+});;
+'use strict';
+
+System.register('blitzz/main/facebook/main', ['flarum/app', 'blitzz/main/facebook/components/FacebookSettingsModal'], function (_export, _context) {
+	"use strict";
+
+	var app, FacebookSettingsModal;
+	return {
+		setters: [function (_flarumApp) {
+			app = _flarumApp.default;
+		}, function (_blitzzMainFacebookComponentsFacebookSettingsModal) {
+			FacebookSettingsModal = _blitzzMainFacebookComponentsFacebookSettingsModal.default;
+		}],
+		execute: function () {
+
+			app.initializers.add('blitzz-main-facebook', function () {
+				console.log("hey!!");
+				var test = new FacebookSettingsModal();
+				console.log(test.form());
+				console.log(app);
+				app.extensionSettings['blitzz-main-facebook'] = function () {
+					return app.modal.show(test);
+				};
+			});
+		}
+	};
 });
