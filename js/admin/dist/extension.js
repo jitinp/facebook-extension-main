@@ -3,21 +3,21 @@
 System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flarum/components/SettingsModal'], function (_export, _context) {
   "use strict";
 
-  var SettingsModal, FacebookSettingsModal;
+  var SettingsModal, FacebookSettingsModal_;
   return {
     setters: [function (_flarumComponentsSettingsModal) {
       SettingsModal = _flarumComponentsSettingsModal.default;
     }],
     execute: function () {
-      FacebookSettingsModal = function (_SettingsModal) {
-        babelHelpers.inherits(FacebookSettingsModal, _SettingsModal);
+      FacebookSettingsModal_ = function (_SettingsModal) {
+        babelHelpers.inherits(FacebookSettingsModal_, _SettingsModal);
 
-        function FacebookSettingsModal() {
-          babelHelpers.classCallCheck(this, FacebookSettingsModal);
-          return babelHelpers.possibleConstructorReturn(this, (FacebookSettingsModal.__proto__ || Object.getPrototypeOf(FacebookSettingsModal)).apply(this, arguments));
+        function FacebookSettingsModal_() {
+          babelHelpers.classCallCheck(this, FacebookSettingsModal_);
+          return babelHelpers.possibleConstructorReturn(this, (FacebookSettingsModal_.__proto__ || Object.getPrototypeOf(FacebookSettingsModal_)).apply(this, arguments));
         }
 
-        babelHelpers.createClass(FacebookSettingsModal, [{
+        babelHelpers.createClass(FacebookSettingsModal_, [{
           key: 'className',
           value: function className() {
             //console.log('ya');
@@ -52,10 +52,10 @@ System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flaru
             )];
           }
         }]);
-        return FacebookSettingsModal;
+        return FacebookSettingsModal_;
       }(SettingsModal);
 
-      _export('default', FacebookSettingsModal);
+      _export('default', FacebookSettingsModal_);
     }
   };
 });;
@@ -64,18 +64,18 @@ System.register('blitzz/main/facebook/components/FacebookSettingsModal', ['flaru
 System.register('blitzz/main/facebook/main', ['flarum/app', 'blitzz/main/facebook/components/FacebookSettingsModal'], function (_export, _context) {
 	"use strict";
 
-	var app, FacebookSettingsModal;
+	var app, FacebookSettingsModal_;
 	return {
 		setters: [function (_flarumApp) {
 			app = _flarumApp.default;
 		}, function (_blitzzMainFacebookComponentsFacebookSettingsModal) {
-			FacebookSettingsModal = _blitzzMainFacebookComponentsFacebookSettingsModal.default;
+			FacebookSettingsModal_ = _blitzzMainFacebookComponentsFacebookSettingsModal.default;
 		}],
 		execute: function () {
 
 			app.initializers.add('blitzz-main-facebook', function () {
 				console.log("hey!!");
-				var fb_modal = new FacebookSettingsModal();
+				var fb_modal = new FacebookSettingsModal_();
 				console.log(fb_modal.form());
 				console.log(app);
 				app.extensionSettings['blitzz-main-facebook'] = function () {

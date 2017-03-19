@@ -1,6 +1,6 @@
 import SettingsModal from 'flarum/components/SettingsModal';
 
-export default class FacebookSettingsModal extends SettingsModal {
+export default class FacebookSettingsModal_ extends SettingsModal {
   className() {
     //console.log('ya');
     return 'FacebookSettingsModal Modal--small';
