@@ -6,16 +6,15 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Toby Zerner",
-            "email": "toby.zerner@gmail.com"
+            "name": "Jitin Pillai"
         }
     ],
     "support": {
         "issues": "https://github.com/flarum/core/issues",
-        "source": "https://github.com/flarum/flarum-ext-auth-facebook"
+        "source": "https://github.com/jitinp/facebook-extension-main"
     },
     "require": {
-        "flarum/core": "^0.1.0-beta.6",
+        "flarum/core": "^0.1.0-beta.5",
         "league/oauth2-facebook": "~1.0",
         "facebook/graph-sdk": "^5.4"
     },
