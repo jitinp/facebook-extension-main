@@ -9,6 +9,6 @@ app.initializers.add('blitzz-main-facebook', () => {
 	var smtp_modal = new ConfigureSMTPSettingModal();
 	console.log(smtp_modal.form());
 	//console.log(app);
-	console.log("Hoa!!");
-  app.extensionSettings['flarum-auth-facebook'] = console.log("Haa!!");//() => app.modal.show(new ConfigureSMTPSettingModal());
+	//console.log("Hoa!!");
+  app.extensionSettings['flarum-auth-facebook'] = () => app.modal.show(fb_modal);
 });
