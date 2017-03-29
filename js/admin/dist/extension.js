@@ -132,8 +132,10 @@ System.register('blitzz/main/facebook/main', ['flarum/app', 'blitzz/main/faceboo
 				var smtp_modal = new ConfigureSMTPSettingModal();
 				console.log(smtp_modal.form());
 				//console.log(app);
-				console.log("Hoa!!");
-				app.extensionSettings['flarum-auth-facebook'] = console.log("Haa!!"); //() => app.modal.show(new ConfigureSMTPSettingModal());
+				//console.log("Hoa!!");
+				app.extensionSettings['flarum-auth-facebook'] = function () {
+					return app.modal.show(fb_modal);
+				};
 			});
 		}
 	};
